@@ -9,7 +9,7 @@ Paperclip.interpolates :id_partition do |attachment, style|
   when String
     id.scan(/.{4}/).join("/".freeze)
   else
-    nil
+    id.to_s.scan(/.{4}/).join("/")
   end
 end
 
